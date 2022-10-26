@@ -1,0 +1,7 @@
+Select your favorite product. You can work with the one product file you used in the last worksheet #6.
+Examine the review_body column in the amazon reviews file for a product of your choice.
+Remove all commas, dots, semicolons, and these stopwords:  and or if in it.
+Remove all html tags, such as <br />
+
+$ grep 0679444815 amazon_reviews_us_Books_v1_02.tsv| awk -F '\t' '{print $14}'| sed 's/\<and\>//gI; s/\<or\>//gI; s/\<if\>//gI; s/\<in\>//gI; s/\<it\>//gI' |  sed 's/[<.../>]//gI' > 0679444815_reviewbody_modified.txt 
+
